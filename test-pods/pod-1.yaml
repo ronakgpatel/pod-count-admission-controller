@@ -3,7 +3,7 @@ kind: Pod
 metadata: 
   labels:
     run: mypod-1
-#    type: spark-exec-pod
+#    type: my-pod-value
   name: mypod-1
 spec:
   containers:

@@ -9,7 +9,7 @@ webhooks:
     admissionReviewVersions: ["v1"]
     objectSelector:
       matchLabels:
-        type: spark-exec-pod  
+        type: my-pod-value  
     rules:
       - apiGroups: ["apps", ""]
         resources:          

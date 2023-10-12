@@ -30,7 +30,14 @@ This is effectively the work of Controller(Deployment/StatefulSet) in kubernets 
   kubectl -n default create -f manifests/
   kubectl -n default get secret pod-checker-secret -o yaml -o jsonpath='{.data.token}' | base64 -d > security/token
   kubectl -n default get secret pod-checker-secret -o yaml -o jsonpath='{.data.ca\.crt}' | base64 -d > security/ca.crt 
-  
+```
+
+# admission_controller.py
+
+The variables in the python file signifies the labels for which the validation would be applied. The default is "type: my-pod-value".
+Only the pods that are created with this label would be part of the validation(webhook-config.yaml). 
+
+```  
   docker build -f . -t <repo>:latest
   docker push <repo>:latest
 ```

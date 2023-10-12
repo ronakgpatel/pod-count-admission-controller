@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  labels:
+    run: mypod-1
+#    type: spark-exec-pod
+  name: mypod-1
+spec:
+  containers:
+  - image: nginx
+    name: mypod    
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always

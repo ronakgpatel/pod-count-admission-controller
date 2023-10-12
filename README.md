@@ -43,7 +43,7 @@ This is effectively the work of Controller(Deployment/StatefulSet) in kubernets 
 # webhook-deploy.yaml
   Update the image in webhook-deploy.yaml with the created and published image.
   Also update the KUBE_API_SERVER environment variable with correct api server IP and port.
-  
+
 # webhook-secret.yaml
   Please encode the webhook.key and webhook.crt file with base64 and provide it in the webhook-secret.yaml
 
@@ -52,6 +52,15 @@ This is effectively the work of Controller(Deployment/StatefulSet) in kubernets 
   kubectl create -f webhook-manifests
 
 ```
+
+## Test
+ Once the deployment is successful and all pods and  services are deployed. You can test the validation webhook by 
+
+ ``` kubectl create -f test-pods\```
+
+ It would either accept or reject the pod creation reqest with messages
+
+ ```Existing pods 2 are already equal or higher than 2```
 
 ## Notes
 If you are planning to use different namespace, make sure to change the DNS and hostname details in certificate and yaml files.

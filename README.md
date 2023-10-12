@@ -34,15 +34,17 @@ This is effectively the work of Controller(Deployment/StatefulSet) in kubernets 
   docker build -f . -t <repo>:latest
   docker push <repo>:latest
 ```
-webhook-config.yaml
+
+# webhook-config.yaml
   Encode the rootca.crt file with base64 and provide it in caBundle before deploying webhook-config.yaml file.
 
 ``` cat rootca.crt | base64 -w0 ``` 
 
-webhook-deploy.yaml
+# webhook-deploy.yaml
   Update the image in webhook-deploy.yaml with the created and published image.
   Also update the KUBE_API_SERVER environment variable with correct api server IP and port.
-webhook-secret.yaml
+  
+# webhook-secret.yaml
   Please encode the webhook.key and webhook.crt file with base64 and provide it in the webhook-secret.yaml
 
 ```
